@@ -8,4 +8,8 @@ function getTasks() {
 function removeTask(id) {
     task = task.filter(task => task.id !== id);
 }
-module.exports = { addTask, getTasks, removeTask };
+function getTask(id){
+    return task[id];
+}
+
+module.exports = { addTask, getTasks, removeTask , getTask};

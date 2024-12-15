@@ -1,4 +1,6 @@
 const Task = require('../models/taskModel');
+const Queue = require('../models/queueModel');
+
 exports.showTasks=(req,res) => {
     const tasks = Task.getTasks();
     res.render('index',{task: tasks});
@@ -7,6 +9,7 @@ exports.showTasks=(req,res) => {
 exports.addTask = (req, res) => {
     const { description } = req.body;
     Task.addTask(description);
+    Queue.publish(Date.now(), description);
     res.redirect('/');
 };
 

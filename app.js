@@ -1,11 +1,15 @@
+
+
 const express = require('express');
 const bodyParser = require('body-parser');
+const amqp = require('amqplib');
 const app = express();
 const taskController = require('./controllers/taskController');
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 app.get('/', taskController.showTasks);
 app.get('/add', (req, res) => res.render('addTask'));
