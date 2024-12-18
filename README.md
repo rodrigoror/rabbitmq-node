@@ -12,3 +12,9 @@ A sample project using rabbitMQ, node JS, and some techniques like TDD, Solid an
 2. In the consumer-node branch we will see a code (nodeJS) to consume the queue.
 
 3. In the publisher-node branch we will see a code (nodeJS) to publish in the queue.
+
+## this Branch
+
+To Run:
+```npm install --save-dev jest supertest```
+
